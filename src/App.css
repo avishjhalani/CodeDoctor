@@ -1,0 +1,101 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  background-color: #0f0f11;
+  color: #e4e4e7;
+  font-family: "Inter", sans-serif;
+}
+
+/* MAIN CONTAINER */
+.main {
+  background-color: #0f0f11;
+}
+
+/* LEFT + RIGHT PANELS */
+.left,
+.right {
+  background-color: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* TOP BAR (tabs / header) */
+.tabs,
+.topTap {
+  background-color: #111113;
+  border-bottom: 1px solid #27272a;
+}
+
+/* BUTTON BASE */
+.btnNormal {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #27272a;
+  background-color: #18181b;
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+/* HOVER EFFECT */
+.btnNormal:hover {
+  background-color: #27272a;
+  transform: translateY(-1px);
+}
+
+/* PRIMARY BUTTON (Fix Code) */
+.btnNormal:nth-child(2) {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  border: none;
+}
+
+.btnNormal:nth-child(2):hover {
+  opacity: 0.9;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0f11;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* EDITOR FIX (remove ugly outline) */
+.monaco-editor,
+.monaco-editor-background {
+  background-color: #0f0f11 !important;
+}
+
+/* RIGHT PANEL TEXT */
+.right p {
+  margin: 0;
+}
+
+/* RESPONSE BOX TEXT */
+.right .p-3 {
+  line-height: 1.6;
+}
+
+/* SMOOTH TRANSITIONS */
+* {
+  transition: all 0.15s ease-in-out;
+}
