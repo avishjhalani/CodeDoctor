@@ -4,7 +4,8 @@ import Navbar from "./components/Navbar";
 import Editor from "@monaco-editor/react";
 import Select from "react-select";
 import { FiZap, FiSearch } from "react-icons/fi";
-import Markdown from "react-markdown";
+import ReactMarkdown from "react-markdown";
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 
 const App = () => {
@@ -168,18 +169,51 @@ const App = () => {
         {/* RIGHT */}
         <div className="flex flex-col w-1/2 bg-[#18181b] rounded-xl border border-zinc-800 overflow-hidden">
 
-          <div className="px-4 flex items-center h-[60px] border-b border-zinc-800 bg-[#111113]">
-            <p className="font-semibold">AI Response</p>
-          </div>
+  {/* Header */}
+  <div className="px-4 flex items-center h-[60px] border-b border-zinc-800 bg-[#111113]">
+    <p className="font-semibold text-white">AI Response</p>
+  </div>
 
-          <div className="flex-1 p-4 overflow-y-auto text-sm text-zinc-300">
-            <div className="bg-[#0f0f11] p-4 rounded-lg border border-zinc-800 whitespace-pre-wrap">
-              {loading ? "Thinking..." : response || "Your AI response will appear here..."}
-            </div>
+  {/* Body */}
+  <div className="flex-1 overflow-y-auto p-6 bg-[#0b0b0d]">
 
-            <Markdown>{response}</Markdown>
-          </div>
+    <div className="bg-[#111113] p-6 rounded-xl border border-zinc-700 shadow-md space-y-4 min-h-[200px]">
+
+      {/* Loading State */}
+      {loading && (
+        <div className="flex flex-col items-center gap-3">
+          <p className="text-zinc-400 text-sm animate-pulse">
+            ⚡ Analyzing your code...
+          </p>
         </div>
+      )}
+
+      {/* Response */}
+      {!loading && response && (
+        <ReactMarkdown
+          className="
+            prose prose-invert max-w-none text-sm leading-relaxed
+            prose-headings:text-white
+            prose-p:text-zinc-300
+            prose-li:text-zinc-300
+            prose-strong:text-white
+            prose-code:bg-zinc-800 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
+          "
+        >
+          {typeof response === "string" ? response : "⚠️ Invalid response"}
+        </ReactMarkdown>
+      )}
+
+      {/* Empty State */}
+      {!loading && !response && (
+        <p className="text-zinc-500 text-sm text-center">
+          Your AI response will appear here...
+        </p>
+      )}
+
+    </div>
+  </div>
+</div>
       </div>
     </>
   );
