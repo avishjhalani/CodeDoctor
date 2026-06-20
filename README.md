@@ -3,7 +3,7 @@
 CodeDoctor is an AI-powered code assistant that helps developers **fix, review, and improve code instantly** using modern LLMs.
 
 Built with a clean developer-focused UI, it combines a powerful code editor with intelligent AI feedback — making debugging and optimization faster than ever.
-
+ Live : https://code-doctor-ai.vercel.app/
 ---
 
 ## ✨ Features
